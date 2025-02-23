@@ -1,6 +1,6 @@
-package com.mariana.catapichallenge.catlist.domain.module
+package com.mariana.catapichallenge.catlist.data.remote.respond
 
-data class Cat(
+data class CatDto(
     val id: String,
     val name: String,
     val origin: String,

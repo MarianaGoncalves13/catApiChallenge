@@ -75,7 +75,11 @@ fun HomeScreen(navController: NavHostController) {
                 startDestination = Screen.CatList.rout
             ) {
                 composable(Screen.CatList.rout) {
-                    //ListOfCats()
+                    CatListScreen(
+                        navController = navController,
+                        catListState = catState,
+                        onEvent = catListViewModel::onEvent
+                    )
                 }
                 composable(Screen.FavoriteCat.rout) {
                     //ListOfCats()

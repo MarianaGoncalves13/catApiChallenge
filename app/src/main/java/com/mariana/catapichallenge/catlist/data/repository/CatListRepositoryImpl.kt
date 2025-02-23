@@ -2,8 +2,8 @@ package com.mariana.catapichallenge.catlist.data.repository
 
 import coil.network.HttpException
 import com.mariana.catapichallenge.catlist.data.local.CatDataBase
-import com.mariana.catapichallenge.catlist.data.local.mappers.toCat
-import com.mariana.catapichallenge.catlist.data.local.mappers.toCatEntity
+import com.mariana.catapichallenge.catlist.data.mappers.toCat
+import com.mariana.catapichallenge.catlist.data.mappers.toCatEntity
 import com.mariana.catapichallenge.catlist.data.remote.CatApi
 import com.mariana.catapichallenge.catlist.domain.module.Cat
 import com.mariana.catapichallenge.catlist.domain.repository.CatListRepository
@@ -25,7 +25,7 @@ class CatListRepositoryImpl @Inject constructor(
     ): Flow<Resource<List<Cat>>> {
         return flow {
             emit(Resource.Loading(true))
-            val localCatList = catDataBase.catDao.getBreedsPagingSource()
+            val localCatList = catDataBase.catDao.getAllBreeds()
             val shouldLocalCatList = localCatList.isNotEmpty() && !forceFetchFromRemote
             if (shouldLocalCatList) {
                 emit(Resource.Success(
@@ -36,9 +36,8 @@ class CatListRepositoryImpl @Inject constructor(
                 emit(Resource.Loading(false))
                 return@flow
             }
-
             val catListFromApi = try {
-                catApi.getBreeds(page)
+                catApi.getBreeds()
             } catch (e: IOException) {
                 e.printStackTrace()
                 emit(Resource.Error(message = "Error loading Cats"))

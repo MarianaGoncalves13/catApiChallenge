@@ -7,9 +7,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.mariana.catapichallenge.catlist.util.Screen
 import com.mariana.catapichallenge.ui.theme.CatApiChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,6 +34,12 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.Home.rout) {
                             HomeScreen(navController)
+                        }
+                        composable(Screen.Details.rout + "/{catId}",
+                            arguments = listOf(
+                                navArgument("catId") {type = NavType.StringType}
+                            )) {
+                           //DetailScreen()
                         }
                     }
                 }

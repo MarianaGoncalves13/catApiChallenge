@@ -1,6 +1,7 @@
 package com.mariana.catapichallenge.catlist.data.remote.respond
 
 data class CatListDto(
-    val page: Int,
-    val results: List<CatListDtoItem>
+    val results: List<CatDto>,
+    val id: String,
+    val url: String
 )

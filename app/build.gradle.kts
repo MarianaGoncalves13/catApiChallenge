@@ -83,6 +83,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization.converter)
     implementation(libs.ok.http)
+    implementation(libs.converter.gson)
 
     //Paging
     implementation(libs.androidx.paging.runtime)
