@@ -15,6 +15,5 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindCatListRepository(
-        catListRepositoryImpl: CatListRepositoryImpl
-    ): CatListRepository
+        catListRepositoryImpl: CatListRepositoryImpl): CatListRepository
 }

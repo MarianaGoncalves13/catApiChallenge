@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface CatListRepository {
     suspend fun getCatListWithBreed(forceFetchFromRemote: Boolean, page: Int): Flow<Resource<List<Cat>>>
-    suspend fun getMovie(id: String): Flow<Resource<Cat>>
+    suspend fun getCat(id: String): Flow<Resource<Cat>>
 }

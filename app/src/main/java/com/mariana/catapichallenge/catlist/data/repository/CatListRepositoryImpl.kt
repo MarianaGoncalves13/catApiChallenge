@@ -1,6 +1,5 @@
 package com.mariana.catapichallenge.catlist.data.repository
 
-import androidx.collection.emptyIntList
 import coil.network.HttpException
 import com.mariana.catapichallenge.catlist.data.local.CatDataBase
 import com.mariana.catapichallenge.catlist.data.local.mappers.toCat
@@ -70,7 +69,7 @@ class CatListRepositoryImpl @Inject constructor(
     }
 
     //This will be used for the details
-    override suspend fun getMovie(id: String): Flow<Resource<Cat>> {
+    override suspend fun getCat(id: String): Flow<Resource<Cat>> {
         return flow {
             emit(Resource.Loading(true))
 
