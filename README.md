@@ -1,12 +1,12 @@
-Sword challenge - CAT Api
+# Sword challenge - CAT Api
 
 Api - https://thecatapi.com 
 
 Architecture used - https://developer.android.com/topic/architecture with MVVM
 
-Features: 
+# Features: 
 
-List of cats 
+## List of cats 
 
 -> where is possible to see the cards with the cats
              
@@ -14,23 +14,23 @@ List of cats
 
 -> Image when it's null supose to show a placeholder
 
-Details 
+## Details 
 
 -> Implemented but couldn't check because of the error described before
 
-Favorites 
+## Favorites 
 
 -> Start the preparation for the feature but didn't conclude. 
 
-Search 
+## Search 
 
 -> Started the ui but because of the same error it was not possible to continue. 
 
-Missing: 
+## Missing: 
 
 Tests
 
-Improvements:
+## Improvements:
 
 Navigation
 
@@ -38,7 +38,7 @@ Error Handling
 
 Modular design
 
-Used:
+## Used:
 Retrofit,
 Hilt,
 Room,
