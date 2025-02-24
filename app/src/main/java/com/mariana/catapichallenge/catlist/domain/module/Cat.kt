@@ -7,4 +7,5 @@ data class Cat(
     val temperament: String,
     val description: String,
     val imageUrl: String?,
+    val lifeSpan: String
 )

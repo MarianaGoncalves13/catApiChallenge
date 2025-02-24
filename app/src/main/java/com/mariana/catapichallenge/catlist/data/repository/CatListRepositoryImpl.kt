@@ -37,7 +37,7 @@ class CatListRepositoryImpl @Inject constructor(
                 return@flow
             }
             val catListFromApi = try {
-                catApi.getBreeds()
+                catApi.getBreeds(10, page)
             } catch (e: IOException) {
                 e.printStackTrace()
                 emit(Resource.Error(message = "Error loading Cats"))
@@ -52,7 +52,7 @@ class CatListRepositoryImpl @Inject constructor(
                 return@flow
             }
 
-            val catEntities = catListFromApi.breeds.let {
+            val catEntities = catListFromApi.let {
                 it.map { catDto ->
                     catDto.toCatEntity()
                 }

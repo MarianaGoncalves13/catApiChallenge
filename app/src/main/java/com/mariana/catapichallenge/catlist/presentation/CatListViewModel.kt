@@ -1,10 +1,10 @@
 package com.mariana.catapichallenge.catlist.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.mariana.catapichallenge.catlist.domain.repository.CatListRepository
 import com.mariana.catapichallenge.catlist.domain.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -47,7 +47,7 @@ class CatListViewModel @Inject constructor(
     }
 
     private fun getCatList(forceFetchFromRemote: Boolean) {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _catListState.update {
                 it.copy(isLoading = true)
             }
@@ -68,7 +68,7 @@ class CatListViewModel @Inject constructor(
                         }
                     }
                     is Resource.Success -> {
-                        result.data?.let { catList ->
+                        result.data?.let {
                             _catListState.update {
                                 it.copy(
                                     catList = catListState.value.catList,

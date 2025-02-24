@@ -5,4 +5,5 @@
     <string name="cat_breeds">Cat Breeds</string>
     <string name="my_favorite_cats">My favorite cats</string>
     <string name="favorite_cat">Favorite cat</string>
+    <string name="search_for_cats">Search for cats</string>
 </resources>

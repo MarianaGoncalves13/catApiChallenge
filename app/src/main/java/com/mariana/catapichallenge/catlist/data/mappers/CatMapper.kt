@@ -11,7 +11,8 @@ fun BreedDto.toCatEntity(): CatEntity {
         name = name,
         origin = origin,
         temperament = temperament,
-        imageUrl = reference_image_id
+        imageUrl = imageUrl?: "",
+        lifeSpan = lifeSpan
     )
 }
 
@@ -22,6 +23,7 @@ fun CatEntity.toCat(): Cat {
         name = name,
         origin = origin,
         temperament = temperament,
-        imageUrl = imageUrl
+        imageUrl = imageUrl,
+        lifeSpan = lifeSpan
     )
 }

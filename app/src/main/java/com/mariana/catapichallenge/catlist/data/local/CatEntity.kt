@@ -12,6 +12,8 @@ data class CatEntity(
     val origin: String,
     val temperament: String,
     val description: String,
-    @ColumnInfo("reference_image_id")
+    @ColumnInfo("image_url")
     val imageUrl: String?,
+    @ColumnInfo("life_span")
+    val lifeSpan: String,
 )
