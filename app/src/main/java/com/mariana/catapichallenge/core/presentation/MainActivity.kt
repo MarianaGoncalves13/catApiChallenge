@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.mariana.catapichallenge.catlist.util.Screen
+import com.mariana.catapichallenge.details.presentation.DetailsScreen
 import com.mariana.catapichallenge.ui.theme.CatApiChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,9 +38,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(Screen.Details.rout + "/{catId}",
                             arguments = listOf(
-                                navArgument("catId") {type = NavType.StringType}
+                                navArgument("catId") { type = NavType.StringType }
                             )) {
-                           //DetailScreen()
+                            DetailsScreen()
                         }
                     }
                 }
