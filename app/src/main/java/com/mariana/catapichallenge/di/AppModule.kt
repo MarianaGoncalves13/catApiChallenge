@@ -10,14 +10,30 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-@Provides
+    @Provides
+    @Singleton
+    fun provideJsonConfig() = Json {
+        ignoreUnknownKeys = true
+    }
+
+    @Provides
+    @Singleton
+    fun provideJsonConverter(json: Json): Converter.Factory = json.asConverterFactory(
+        contentType = "application/json; charset=UTF8".toMediaType()
+    )
+
+    @Provides
 fun provideCatDao(
     dataBase: CatDataBase,
 ): CatDao = dataBase.catDao
@@ -26,19 +42,19 @@ fun provideCatDao(
     fun provideCatApi(): CatApi {
         return Retrofit.Builder()
             .baseUrl(CatApi.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(
+                Json.asConverterFactory(
+                    "application/json; charset=UTF8".toMediaType()))
             .build()
             .create(CatApi::class.java)
     }
 
     @Provides
-    fun provideCatDatabase(
+    fun provideDatabase(
         @ApplicationContext context: Context
-    ): CatDataBase {
-        return Room.databaseBuilder(
-            context,
-            CatDataBase::class.java,
-            "catdb.db"
-        ).build()
-    }
+    ): CatDataBase = Room.databaseBuilder(
+        context,
+        CatDataBase::class.java,
+        "cat_api_db"
+    ).build()
 }

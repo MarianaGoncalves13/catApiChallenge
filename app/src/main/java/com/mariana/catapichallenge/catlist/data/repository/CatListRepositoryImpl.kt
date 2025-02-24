@@ -52,7 +52,7 @@ class CatListRepositoryImpl @Inject constructor(
                 return@flow
             }
 
-            val catEntities = catListFromApi.results.let {
+            val catEntities = catListFromApi.breeds.let {
                 it.map { catDto ->
                     catDto.toCatEntity()
                 }

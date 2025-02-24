@@ -10,9 +10,9 @@ interface CatDao {
     @Upsert
     suspend fun upsertCatList(catList:List<CatEntity>)
 
-    @Query("SELECT * FROM CatEntity")
+    @Query("SELECT * FROM breeds")
     fun getAllBreeds(): List<CatEntity>
 
-    @Query("SELECT * FROM CatEntity WHERE id = :id")
+    @Query("SELECT * FROM breeds WHERE id = :id")
     suspend fun getCatById(id: String): CatEntity
 }

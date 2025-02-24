@@ -1,7 +1,6 @@
 package com.mariana.catapichallenge.catlist.presentation
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.mariana.catapichallenge.catlist.domain.repository.CatListRepository
 import com.mariana.catapichallenge.catlist.domain.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
