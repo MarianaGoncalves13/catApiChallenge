@@ -1,4 +1,4 @@
-package com.mariana.catapichallenge.details.presentation
+package com.mariana.catapichallenge.catlist.presentation.details
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

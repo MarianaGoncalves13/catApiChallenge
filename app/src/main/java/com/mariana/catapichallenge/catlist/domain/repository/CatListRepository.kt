@@ -1,6 +1,6 @@
 package com.mariana.catapichallenge.catlist.domain.repository
 
-import com.mariana.catapichallenge.catlist.domain.module.Cat
+import com.mariana.catapichallenge.catlist.module.Cat
 import com.mariana.catapichallenge.catlist.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response

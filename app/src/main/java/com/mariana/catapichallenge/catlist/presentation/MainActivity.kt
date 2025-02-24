@@ -1,4 +1,4 @@
-package com.mariana.catapichallenge.core.presentation
+package com.mariana.catapichallenge.catlist.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,7 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.mariana.catapichallenge.catlist.util.Screen
-import com.mariana.catapichallenge.details.presentation.DetailsScreen
+import com.mariana.catapichallenge.catlist.presentation.details.DetailsScreen
 import com.mariana.catapichallenge.ui.theme.CatApiChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 

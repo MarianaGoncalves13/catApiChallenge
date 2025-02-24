@@ -1,4 +1,4 @@
-package com.mariana.catapichallenge.catlist.presentation
+package com.mariana.catapichallenge.catlist.presentation.mainscreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

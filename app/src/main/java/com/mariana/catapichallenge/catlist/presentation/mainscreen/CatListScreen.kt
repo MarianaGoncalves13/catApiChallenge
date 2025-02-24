@@ -1,4 +1,4 @@
-package com.mariana.catapichallenge.core.presentation
+package com.mariana.catapichallenge.catlist.presentation.mainscreen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,8 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.mariana.catapichallenge.catlist.presentation.CatListState
-import com.mariana.catapichallenge.catlist.presentation.CatListUiEvent
 import com.mariana.catapichallenge.catlist.presentation.components.CatItem
 
 @Composable

@@ -15,4 +15,10 @@ interface CatDao {
 
     @Query("SELECT * FROM breeds WHERE id = :id")
     suspend fun getCatById(id: String): CatEntity
+
+    @Query("UPDATE breeds set favorite_id = :favoriteId where id = :id")
+    suspend fun updateFavorite(id: String, favoriteId: Long)
+
+    @Query("UPDATE breeds set favorite_id = null")
+    suspend fun removeAllFavorite()
 }

@@ -1,6 +1,6 @@
-package com.mariana.catapichallenge.catlist.presentation
+package com.mariana.catapichallenge.catlist.presentation.mainscreen
 
-import com.mariana.catapichallenge.catlist.domain.module.Cat
+import com.mariana.catapichallenge.catlist.module.Cat
 
 data class CatListState(
     val isLoading: Boolean = false,

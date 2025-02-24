@@ -16,4 +16,6 @@ data class CatEntity(
     val imageUrl: String?,
     @ColumnInfo("life_span")
     val lifeSpan: String,
+    @ColumnInfo("favorite_id")
+    val favoriteId: String?,
 )

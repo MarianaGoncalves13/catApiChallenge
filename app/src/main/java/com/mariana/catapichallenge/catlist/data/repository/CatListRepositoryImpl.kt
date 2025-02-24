@@ -5,11 +5,13 @@ import com.mariana.catapichallenge.catlist.data.local.CatDataBase
 import com.mariana.catapichallenge.catlist.data.mappers.toCat
 import com.mariana.catapichallenge.catlist.data.mappers.toCatEntity
 import com.mariana.catapichallenge.catlist.data.remote.CatApi
-import com.mariana.catapichallenge.catlist.domain.module.Cat
+import com.mariana.catapichallenge.catlist.module.Cat
 import com.mariana.catapichallenge.catlist.domain.repository.CatListRepository
 import com.mariana.catapichallenge.catlist.domain.utils.Resource
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import okio.IOException
 import javax.inject.Inject
 
@@ -64,7 +66,7 @@ class CatListRepositoryImpl @Inject constructor(
                 }
             ))
             emit(Resource.Loading(false))
-        }
+        }.flowOn(Dispatchers.IO)
     }
 
     //This will be used for the details

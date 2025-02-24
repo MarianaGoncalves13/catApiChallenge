@@ -2,7 +2,7 @@ package com.mariana.catapichallenge.catlist.data.mappers
 
 import com.mariana.catapichallenge.catlist.data.local.CatEntity
 import com.mariana.catapichallenge.catlist.data.remote.respond.BreedDto
-import com.mariana.catapichallenge.catlist.domain.module.Cat
+import com.mariana.catapichallenge.catlist.module.Cat
 
 fun BreedDto.toCatEntity(): CatEntity {
     return CatEntity(
@@ -12,7 +12,8 @@ fun BreedDto.toCatEntity(): CatEntity {
         origin = origin,
         temperament = temperament,
         imageUrl = imageUrl?: "",
-        lifeSpan = lifeSpan
+        lifeSpan = lifeSpan,
+        favoriteId = favoriteId
     )
 }
 

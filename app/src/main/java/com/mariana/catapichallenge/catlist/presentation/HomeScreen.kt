@@ -1,4 +1,4 @@
-package com.mariana.catapichallenge.core.presentation
+package com.mariana.catapichallenge.catlist.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -33,9 +33,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mariana.catapichallenge.R
-import com.mariana.catapichallenge.catlist.presentation.CatListUiEvent
-import com.mariana.catapichallenge.catlist.presentation.CatListViewModel
+import com.mariana.catapichallenge.catlist.presentation.mainscreen.CatListUiEvent
+import com.mariana.catapichallenge.catlist.presentation.mainscreen.CatListViewModel
 import com.mariana.catapichallenge.catlist.util.Screen
+import com.mariana.catapichallenge.catlist.presentation.mainscreen.CatListScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

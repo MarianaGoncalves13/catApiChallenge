@@ -42,7 +42,7 @@ import coil.request.ImageRequest
 import coil.size.Size
 import com.mariana.catapichallenge.R
 import com.mariana.catapichallenge.catlist.data.remote.CatApi
-import com.mariana.catapichallenge.catlist.domain.module.Cat
+import com.mariana.catapichallenge.catlist.module.Cat
 import com.mariana.catapichallenge.catlist.util.Screen
 import com.mariana.catapichallenge.catlist.util.getAverageColor
 

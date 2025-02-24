@@ -1,5 +1,6 @@
 package com.mariana.catapichallenge.catlist.data.remote.respond
 
+import androidx.room.ColumnInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -14,4 +15,15 @@ data class BreedDto(
     val imageUrl: String? = null,
     @SerialName("life_span")
     val lifeSpan: String,
+    @ColumnInfo("favorite_id")
+    val favoriteId: String,
+)
+
+@Serializable
+data class FavoriteBreed(
+    val id: String,
+    @SerialName("image_id")
+    val breedId: String? = null,
+    @SerialName("sub_id")
+    val userId: String? = null,
 )

@@ -1,4 +1,4 @@
-package com.mariana.catapichallenge.catlist.domain.module
+package com.mariana.catapichallenge.catlist.module
 
 data class Cat(
     val id: String,
